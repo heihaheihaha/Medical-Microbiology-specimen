@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>示教标本+ppt</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="546725fb-1ba8-4b53-9841-3c40942b4de7" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_canaletto_1720.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">ℹ️</span></div><h1 class="page-title">示教标本+ppt</h1><p class="page-description"></p></header><div class="page-body"><div id="cc125b7c-b755-4e30-a5e8-acd40231c6ae" class="collection-content"><h4 class="collection-title">微生物示教片+ppt</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Name</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Created</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th></tr></thead><tbody><tr id="c685b316-c402-4da0-840c-70b622b67d8f"><td class="cell-title"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E7%9C%9F%E8%8F%8C%20c685b316c4024da0840c70b622b67d8f.html"><span class="icon">🍄</span>真菌</a></td><td class="cell-iTWP"><time>@December 3, 2024 11:47 PM</time></td><td class="cell-kG^S"></td></tr><tr id="152a2bf9-1abe-8068-8a5a-e00e7a162f45"><td class="cell-title"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E8%A1%A3%E5%8E%9F%20%E6%94%AF%E5%8E%9F%20%E7%AB%8B%E5%85%8B%E6%AC%A1-%E4%BD%93%20152a2bf91abe80688a5ae00e7a162f45.html">衣原/支原/立克次-体</a></td><td class="cell-iTWP"><time>@December 4, 2024 3:23 PM</time></td><td class="cell-kG^S"></td></tr><tr id="152a2bf9-1abe-80c9-a37d-c2400a030b12"><td class="cell-title"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E8%9E%BA%E6%97%8B%E4%BD%93%EF%BC%88%E6%A2%85%E6%AF%92+%E9%92%A9%E7%AB%AF%EF%BC%89%20152a2bf91abe80c9a37dc2400a030b12.html">螺旋体（梅毒+钩端）</a></td><td class="cell-iTWP"><time>@December 4, 2024 3:24 PM</time></td><td class="cell-kG^S"></td></tr><tr id="156a2bf9-1abe-80d6-86b3-d4aa3d83ead7"><td class="cell-title"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E7%90%83%E8%8F%8C%20156a2bf91abe80d686b3d4aa3d83ead7.html">球菌</a></td><td class="cell-iTWP"><time>@December 8, 2024 7:14 PM</time></td><td class="cell-kG^S"></td></tr><tr id="156a2bf9-1abe-8092-8259-d1d0f3a257bd"><td class="cell-title"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E6%9D%86%E8%8F%8C%20156a2bf91abe80928259d1d0f3a257bd.html">杆菌</a></td><td class="cell-iTWP"><time>@December 8, 2024 7:53 PM</time></td><td class="cell-kG^S"></td></tr><tr id="156a2bf9-1abe-8037-9a3e-f4b6d0ba9607"><td class="cell-title"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E5%BC%A7%E8%8F%8C%20156a2bf91abe80379a3ef4b6d0ba9607.html">弧菌</a></td><td class="cell-iTWP"><time>@December 8, 2024 8:22 PM</time></td><td class="cell-kG^S"></td></tr><tr id="156a2bf9-1abe-809f-8cd4-c43418eb2582"><td class="cell-title"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E7%97%85%E6%AF%92-%E5%86%85%E5%9F%BA%E5%B0%8F%E4%BD%93%EF%BC%88Negri%20bodies%EF%BC%89%20156a2bf91abe809f8cd4c43418eb2582.html">病毒-内基小体（Negri bodies）</a></td><td class="cell-iTWP"><time>@December 8, 2024 9:16 PM</time></td><td class="cell-kG^S"></td></tr></tbody></table><br/><br/></div><p id="0d29e713-118a-40fc-8f32-6e04a3a18240" class="">
+</p><h1 id="c6387c93-5c81-45a2-8353-19e570b6a956" class="">荚膜</h1><div id="485e96f7-bf31-44b9-82a7-4e2dca2858f9" class="column-list"><div id="451a327e-da0d-4c4e-b88d-880e73ec04ac" style="width:33.333333333333336%" class="column"><figure id="c3fcee22-ee30-4abc-804b-cf7ab26c7ddf" class="image"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/db14039b-e167-4f0c-b91d-dd0afc83fc3c.png"><img style="width:320px" src="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/db14039b-e167-4f0c-b91d-dd0afc83fc3c.png"/></a><figcaption><strong>产气荚膜梭菌</strong></figcaption></figure></div><div id="6ef550b4-7e7b-47a2-a854-4942e2d444e7" style="width:40%" class="column"><figure id="d491eb87-dbed-4800-8fb3-4db3ec0e4bc8" class="image"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/0de94d4b-150b-462d-bfaf-18ce33c21c78.png"><img style="width:320px" src="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/0de94d4b-150b-462d-bfaf-18ce33c21c78.png"/></a><figcaption>产气荚膜梭菌-荚膜</figcaption></figure></div></div><div id="5ccdf004-96aa-468b-b6a5-6204fa9a2af5" class="column-list"><div id="b4507fe9-a245-4346-b573-a5314a41ba88" style="width:52.94117647058824%" class="column"><figure id="a80d0398-8ef5-4e33-9cdd-412785a94424" class="image"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/3a128108-bd8b-48ee-bf1a-9d588278a53a.png"><img style="width:320px" src="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/3a128108-bd8b-48ee-bf1a-9d588278a53a.png"/></a><figcaption>炭疽荚膜（针尖所指）</figcaption></figure></div><div id="3205d0c5-a769-4779-9db6-824030f60a4b" style="width:47.058823529411754%" class="column"><figure id="42f531ca-eb30-4478-8f5d-967f15982820" class="image"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/e52503eb-9e5b-47e7-9e88-0e67cb6c23e0.png"><img style="width:320px" src="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/e52503eb-9e5b-47e7-9e88-0e67cb6c23e0.png"/></a><figcaption>炭疽荚膜（之前的示教片）</figcaption></figure></div></div><h1 id="7742646c-2dac-4912-8810-c5630203a4ff" class="">芽孢</h1><div id="2129e3ba-528c-4d7b-9a20-889f293b77d0" class="column-list"><div id="c1f3ff01-c48c-4927-ae9b-ff3f4fd2cdbd" style="width:33.333333333333336%" class="column"><div><figure id="85b5dc75-a24a-433e-9f98-e4fd1e9dc3ca" class="image"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E6%9D%86%E8%8F%8C%20156a2bf91abe80928259d1d0f3a257bd/39a25ec5-987f-44e8-80fc-2b7a89861d67.png"><img style="width:320px" src="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E6%9D%86%E8%8F%8C%20156a2bf91abe80928259d1d0f3a257bd/39a25ec5-987f-44e8-80fc-2b7a89861d67.png"/></a><figcaption>破伤风梭菌 火柴棍</figcaption></figure></div></div><div id="35d825d7-c63a-4414-91da-08eff88f952d" style="width:33.333333333333336%" class="column"><div><figure id="156a2bf9-1abe-8026-8218-fc5a506d902e" class="image"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E6%9D%86%E8%8F%8C%20156a2bf91abe80928259d1d0f3a257bd/d574c176-6acc-4dc3-91ce-c9c33038a172.png"><img style="width:320px" src="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E6%9D%86%E8%8F%8C%20156a2bf91abe80928259d1d0f3a257bd/d574c176-6acc-4dc3-91ce-c9c33038a172.png"/></a><figcaption>肉毒梭菌芽孢</figcaption></figure></div></div><div id="3eeeafd1-bc3f-4b35-ae9c-475184dd8216" style="width:33.33333333333333%" class="column"><div><figure id="156a2bf9-1abe-80f9-bbd9-e6f5990f82fe" class="image"><a href="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E6%9D%86%E8%8F%8C%20156a2bf91abe80928259d1d0f3a257bd/47a72f4d-03ae-4bad-be57-6dbc9d45c45d.png"><img style="width:320px" src="%E7%A4%BA%E6%95%99%E6%A0%87%E6%9C%AC+ppt%20546725fb1ba84b5398413c40942b4de7/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%A4%BA%E6%95%99%E7%89%87+ppt%20cc125b7cb7554e30a5e8acd40231c6ae/%E6%9D%86%E8%8F%8C%20156a2bf91abe80928259d1d0f3a257bd/47a72f4d-03ae-4bad-be57-6dbc9d45c45d.png"/></a><figcaption>炭疽芽孢</figcaption></figure></div></div></div><div id="bb0a8678-756f-467a-aa82-38a9c0317702" class="column-list"><div id="d6b7f991-f2cd-45fb-b407-0d461b25d54e" style="width:50.000000000000014%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="db2a9ae2-b259-40c0-9e00-a12e7acf11ca"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h1 id="e5ea5de4-9e02-4d52-a280-e4f1d9ccc1c4" class=""><mark class="highlight-blue">G+</mark></h1><ul id="2cd162c7-7ab1-4120-b898-5821df639526" class="bulleted-list"><li style="list-style-type:disc">葡萄球菌</li></ul><ul id="2c09d11c-61fb-41be-b2ff-cc56d52dbeed" class="bulleted-list"><li style="list-style-type:disc">链球菌</li></ul><ul id="16f6f8ac-38be-4bef-99e7-b437d81c7bc1" class="bulleted-list"><li style="list-style-type:disc">肺炎链球菌</li></ul><ul id="1703b03e-59d5-4d14-8e80-a9023d3ae412" class="bulleted-list"><li style="list-style-type:disc">炭疽杆菌</li></ul><ul id="bcb9b3f0-fe21-4ac5-86d4-a25001f28d63" class="bulleted-list"><li style="list-style-type:disc">破伤风梭菌</li></ul><ul id="a6045200-2270-4acf-bc25-72bdd4b29c5f" class="bulleted-list"><li style="list-style-type:disc">白喉棒状杆菌</li></ul></div></figure></div><div id="c25dd070-9290-4030-ad62-f59997da182d" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e503be3d-9ad4-4f43-a83e-d6d075766274"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h1 id="5fafd9dc-bc64-48c5-92e7-03241e91bd6f" class=""><mark class="highlight-red">G-</mark></h1><ul id="a2b57077-4681-41e1-929e-a0baa12720c3" class="bulleted-list"><li style="list-style-type:disc">奈瑟菌</li></ul><ul id="e3806a60-b66e-48ac-a7d0-2025841c8a1b" class="bulleted-list"><li style="list-style-type:disc">肉毒梭菌</li></ul><ul id="7e43de66-df1b-4faa-9fd7-ebf14191280c" class="bulleted-list"><li style="list-style-type:disc">肠道杆菌</li></ul><ul id="a429b646-6b01-4b03-8782-e74b79a08b87" class="bulleted-list"><li style="list-style-type:disc">（霍乱）弧菌</li></ul></div></figure><p id="31f7745b-92bd-421d-b1b4-ec292d4b197f" class="">
+</p></div></div><hr id="fd4957cb-3b17-4513-99c9-534e7c9cde55"/><div id="8ba48abe-576e-443e-b370-75b07e10d88b" class="column-list"><div id="77e6017b-29e7-4c86-ab1f-63c846442649" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="fd7f38a2-dc49-47f0-9b0f-519cbb2f4e33"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h1 id="5492df13-1c6e-49a6-8351-3791976999b5" class="">散在排列</h1><ul id="b5af09d3-31f7-4946-86d6-8d0236b3e56e" class="bulleted-list"><li style="list-style-type:disc">肠道杆菌</li></ul><ul id="d29098ab-7730-4eee-ac43-3a4dbc2ea372" class="bulleted-list"><li style="list-style-type:disc">分支杆菌（或束状）</li></ul><ul id="da1a7c3b-e68d-4ba7-9c55-f8d23f0a03d7" class="bulleted-list"><li style="list-style-type:disc">破伤风梭菌</li></ul><ul id="9dfcbf4f-9e7f-4bda-ba68-0c98e5670459" class="bulleted-list"><li style="list-style-type:disc">肉毒梭菌</li></ul><ul id="ccf43992-187a-49a1-af67-c1d5f79d63bd" class="bulleted-list"><li style="list-style-type:disc">产气荚膜梭菌</li></ul></div></figure><p id="36048297-e7d5-46f9-ba7b-e28fa4e022b2" class="">
+</p></div><div id="f141f199-d5a1-4a33-86ba-0cc1e0b9b92a" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="03476c71-4c2c-4086-862e-cbe943fe428e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><h1 id="5dc8b696-7f01-40e8-9773-74fc02d8db4b" class="">非散在排列</h1><table id="39c0dc31-77f1-450f-bbb8-a5fba7bb236d" class="simple-table"><tbody><tr id="efefce54-6f2c-4073-b3f3-41eeb850e5fc"><td id="kSMo" class="">竹节状排列</td><td id="lGco" class="">炭疽芽胞杆菌</td></tr><tr id="7fbaa93f-1d2f-4150-83b2-76d15894ea4d"><td id="kSMo" class="">V、L、Y或栅栏状排列</td><td id="lGco" class="">白喉棒状杆菌</td></tr><tr id="c9f3223f-b00b-4608-a5d2-be263b9d61ac"><td id="kSMo" class="">葡萄样排列</td><td id="lGco" class="">葡萄球菌</td></tr><tr id="7c6e411c-c8d4-4474-bb3c-621630afc9b6"><td id="kSMo" class="">链状排列</td><td id="lGco" class="">链球菌</td></tr><tr id="808d692f-29a0-424a-919a-a1efdffe45bc"><td id="kSMo" class="">成单、成双、短链状排列</td><td id="lGco" class="">肺炎链球菌</td></tr><tr id="5ecd4a64-9cac-4366-8f6e-a3f87be83812"><td id="kSMo" class="">成双排列</td><td id="lGco" class="">奈瑟菌</td></tr></tbody></table></div></figure></div></div><hr id="f6a96ce5-2432-40a3-8e8c-ede15ce45d90"/><p id="e3993042-a547-42ef-ab9d-55f7a013a443" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

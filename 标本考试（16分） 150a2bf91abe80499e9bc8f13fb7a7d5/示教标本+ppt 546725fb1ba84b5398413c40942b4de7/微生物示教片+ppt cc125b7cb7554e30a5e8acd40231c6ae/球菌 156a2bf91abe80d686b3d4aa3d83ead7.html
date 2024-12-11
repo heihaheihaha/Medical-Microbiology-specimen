@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>球菌</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="156a2bf9-1abe-80d6-86b3-d4aa3d83ead7" class="page sans"><header><h1 class="page-title">球菌</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Created</th><td><time>@December 8, 2024 7:14 PM</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td></td></tr></tbody></table></header><div class="page-body"><h1 id="156a2bf9-1abe-8040-83f3-caa89db9d295" class="">葡萄球菌<em>staphylococcus</em></h1><div id="156a2bf9-1abe-809b-9e80-fc92a70ef9b8" class="column-list"><div id="156a2bf9-1abe-805c-ac90-fdb3ccac3191" style="width:50%" class="column"><figure id="156a2bf9-1abe-8032-a96a-f40596fc11f8" class="image"><a href="%E7%90%83%E8%8F%8C%20156a2bf91abe80d686b3d4aa3d83ead7/73986061-f380-468e-9fa2-98caf203a6c1.png"><img style="width:320.1913875598086px" src="%E7%90%83%E8%8F%8C%20156a2bf91abe80d686b3d4aa3d83ead7/73986061-f380-468e-9fa2-98caf203a6c1.png"/></a><figcaption>金黄色葡萄球菌</figcaption></figure></div><div id="156a2bf9-1abe-8009-a893-cf0f15726dfa" style="width:50%" class="column"><figure id="88d2390d-1984-4519-ae5e-b8dd33bb2c7f" class="image"><a href="../../%E8%87%AA%E6%B5%8B%202bc534d34f1e411db727a1a46ee0607f/63989f94-0262-449f-bde0-0af9d77242e2.png"><img style="width:320px" src="../../%E8%87%AA%E6%B5%8B%202bc534d34f1e411db727a1a46ee0607f/63989f94-0262-449f-bde0-0af9d77242e2.png"/></a><figcaption>金黄色葡萄球菌</figcaption></figure></div></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="156a2bf9-1abe-80a4-9c80-ddb0c3d5208a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="156a2bf9-1abe-8059-ad37-c1b34aa17f80" class="">标本：血液、脓汁、CSF</p><p id="156a2bf9-1abe-8039-b590-d99347028ef5" class="">染色：革兰染色</p><p id="156a2bf9-1abe-80ba-95cd-c70ea1607bf0" class="">描述：<mark class="highlight-red">球形，葡萄状排列，革兰阳性</mark></p><p id="156a2bf9-1abe-8062-b113-e1933a37fbc3" class="">名称：葡萄球菌</p><p id="156a2bf9-1abe-804b-b11c-dad1a8f59003" class="">意义：败血症(<mark class="highlight-blue">血液</mark>）</p><p id="156a2bf9-1abe-8019-9988-f4d1ba107f81" class="">化脓性感染（脓汁）</p><p id="156a2bf9-1abe-800b-a23e-ccd2e60118a2" class="">化脓性脑膜炎（CSF）</p></div></figure><hr id="156a2bf9-1abe-80a2-8a3c-c340bbfabc6c"/><h1 id="156a2bf9-1abe-80c8-bd0f-fd3645cee53f" class=""><strong>链球菌</strong></h1><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="156a2bf9-1abe-8077-b446-cc2a701a7c31"><div style="font-size:1.5em"><span class="icon">⚠️</span></div><div style="width:100%"><p id="df742c7f-092b-4087-a67c-d9a469b68788" class="">不要求区分甲链/乙链</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="156a2bf9-1abe-80e5-8276-e82475f3556f"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="156a2bf9-1abe-80ea-8b39-d9d64e764b90" class="">标本：血液、脓汁、CSF</p><p id="156a2bf9-1abe-8007-81ca-f59ff09a35cd" class="">染色：革兰染色</p><p id="156a2bf9-1abe-8097-ab1a-e2c7eab5046f" class="">描述：球形，链状排列，革兰阳性</p><p id="156a2bf9-1abe-805e-9b5c-d5f2629172a3" class="">名称：链球菌</p><p id="156a2bf9-1abe-805b-8a63-c624728f7f12" class="">意义：败血症(血液）</p><p id="156a2bf9-1abe-80e6-9e50-dc40815d361e" class="">化脓性感染（脓汁）</p><p id="156a2bf9-1abe-8045-97e7-cc62ad8ce050" class="">化脓性脑膜炎（CSF）</p></div></figure><h2 id="156a2bf9-1abe-801c-aae2-dfce21cd45db" class=""><strong>甲型溶血性链球菌</strong></h2><div id="156a2bf9-1abe-803a-924e-d6ab10280237" class="column-list"><div id="156a2bf9-1abe-80c5-a442-f454eddffe9c" style="width:50%" class="column"><figure id="156a2bf9-1abe-808b-a0b7-f54c6b777cb4" class="image"><a href="../../%E8%87%AA%E6%B5%8B%202bc534d34f1e411db727a1a46ee0607f/2112befb-d6be-47f6-aa24-bd3396e68f4a.png"><img style="width:320px" src="../../%E8%87%AA%E6%B5%8B%202bc534d34f1e411db727a1a46ee0607f/2112befb-d6be-47f6-aa24-bd3396e68f4a.png"/></a><figcaption><strong>甲型溶血性链球菌</strong></figcaption></figure></div><div id="156a2bf9-1abe-8094-b85f-d0dd78f47684" style="width:50%" class="column"><figure id="156a2bf9-1abe-804e-a010-e4a4f76c4909" class="image"><a href="%E7%90%83%E8%8F%8C%20156a2bf91abe80d686b3d4aa3d83ead7/39475b18-71b6-4366-8bb5-dfd7459dd14b.png"><img style="width:320px" src="%E7%90%83%E8%8F%8C%20156a2bf91abe80d686b3d4aa3d83ead7/39475b18-71b6-4366-8bb5-dfd7459dd14b.png"/></a><figcaption>甲链</figcaption></figure></div></div><h2 id="156a2bf9-1abe-8032-b864-ff69f08fdf2f" class=""><strong>乙型溶血性链球菌</strong></h2><figure id="156a2bf9-1abe-8022-b355-dc636d19afa6" class="image"><a href="../../%E8%87%AA%E6%B5%8B%202bc534d34f1e411db727a1a46ee0607f/735fa1ea-299f-4e45-bf5e-05ae962c8ac7.png"><img style="width:320.20253164556965px" src="../../%E8%87%AA%E6%B5%8B%202bc534d34f1e411db727a1a46ee0607f/735fa1ea-299f-4e45-bf5e-05ae962c8ac7.png"/></a><figcaption><strong>乙型溶血性链球菌</strong></figcaption></figure><hr id="156a2bf9-1abe-80ba-90bf-c5ab3b8715bc"/><h1 id="156a2bf9-1abe-8073-9ece-ebd2e95a5ffc" class="">肺炎链球菌(<em>S.pneumoniae</em>)</h1><p id="156a2bf9-1abe-80e3-94e9-cfe9b0ed0d8c" class="">肺炎链球菌(<em>S. pneumoniae</em>)俗称肺炎球菌。</p><p id="156a2bf9-1abe-8090-9a18-c93bfc66899f" class="">革兰氏阳性，菌体呈矛头状, <mark class="highlight-blue">多成双排列</mark>,宽端相对,尖端向外。在痰液、脓汁、肺组织病变中<mark class="highlight-brown">亦可呈单个或短链状</mark>。在机体内或含血清的培养基中能形成荚膜。无鞭毛, 无芽胞。</p><p id="156a2bf9-1abe-8082-b370-fc78c4de4d48" class="">根据病变部位,采取痰液、脓汁、血液或脑脊液等标本。可直接涂片镜检,<mark class="highlight-red">若发现典型的革兰氏阳性、具有荚膜的双球菌存在,即可作初步诊断</mark>。</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="156a2bf9-1abe-80b3-bc9e-e16f79a9156d"><div style="font-size:1.5em"><span class="icon">🤠</span></div><div style="width:100%"><ul id="980af5f2-5aad-4412-a8b4-075231ffa170" class="bulleted-list"><li style="list-style-type:disc">格兰阳性</li></ul><ul id="156a2bf9-1abe-800b-949a-d0792b93e178" class="bulleted-list"><li style="list-style-type:disc">有荚膜</li></ul><ul id="156a2bf9-1abe-80dd-aff7-f1188c04a2e2" class="bulleted-list"><li style="list-style-type:disc">成单、成双、短链状排列</li></ul></div></figure><div id="156a2bf9-1abe-805a-b8b5-f99e34ff9164" class="column-list"><div id="156a2bf9-1abe-8058-9c72-d0b87776c42b" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="156a2bf9-1abe-8054-b0f3-e71da8517048"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="156a2bf9-1abe-80b3-83d4-ee632f5399cf" class=""><strong>标本：痰<br/>染色：革兰染色<br/>描述：球形，成对排列，G+，有荚膜<br/>名称：肺炎链球菌<br/>意义：肺炎<br/></strong></p><figure id="156a2bf9-1abe-80f9-8e8b-cfc0db3568e3" class="image"><a href="%E7%90%83%E8%8F%8C%20156a2bf91abe80d686b3d4aa3d83ead7/image.png"><img style="width:268.9921875px" src="%E7%90%83%E8%8F%8C%20156a2bf91abe80d686b3d4aa3d83ead7/image.png"/></a></figure></div></figure></div><div id="156a2bf9-1abe-805d-aa60-e49779237f09" style="width:50%" class="column"><figure id="156a2bf9-1abe-8095-b78d-fee4a2e297a8" class="image"><a href="../../%E8%87%AA%E6%B5%8B%202bc534d34f1e411db727a1a46ee0607f/aa39f2ce-4f7f-4722-8465-58081c6e7072.png"><img style="width:320px" src="../../%E8%87%AA%E6%B5%8B%202bc534d34f1e411db727a1a46ee0607f/aa39f2ce-4f7f-4722-8465-58081c6e7072.png"/></a><figcaption>肺炎球菌</figcaption></figure></div></div><hr id="156a2bf9-1abe-8012-a152-f5373ff8a3e2"/><h1 id="156a2bf9-1abe-8018-bccb-ca058e981a91" class=""><strong>奈瑟菌</strong></h1><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="156a2bf9-1abe-8027-aecc-e7106a76197d"><div style="font-size:1.5em"><span class="icon">☝</span></div><div style="width:100%"><p id="8745eb83-9351-422c-b571-2117a4200487" class=""><strong>区分</strong>：注意取样的标本位置</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="156a2bf9-1abe-800b-a02d-d40f51a6e8c1"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="156a2bf9-1abe-8086-bb98-e1e5c9fd19e0" class="">标本：CSF或泌尿生殖道分泌物</p><p id="156a2bf9-1abe-80f5-8c2a-febf3df8c20d" class="">染色：革兰染色</p><p id="156a2bf9-1abe-8027-b63a-c81c0df59c87" class="">描述：球形，成双排列，革兰阴性，位于中性粒细胞内或外</p><p id="156a2bf9-1abe-806d-9a9d-f96a8f7f7c72" class="">名称：脑膜炎奈瑟菌（CSF），淋病奈瑟菌（泌尿生殖道分泌物）</p><p id="156a2bf9-1abe-80b1-af55-c644dbf18f8d" class="">意义：流脑（CSF），淋病（泌尿生殖道分泌物）</p></div></figure><div id="156a2bf9-1abe-8065-a8c4-df564387f708" class="column-list"><div id="156a2bf9-1abe-8002-aa0c-e57f7d9a8c6c" style="width:50%" class="column"><figure id="156a2bf9-1abe-8073-a8ee-e543fa71e9ab" class="image"><a href="../../%E8%87%AA%E6%B5%8B%202bc534d34f1e411db727a1a46ee0607f/bbcc15d7-ce42-4e6d-b60b-2bc7c02d5335.png"><img style="width:320px" src="../../%E8%87%AA%E6%B5%8B%202bc534d34f1e411db727a1a46ee0607f/bbcc15d7-ce42-4e6d-b60b-2bc7c02d5335.png"/></a><figcaption>脑膜炎球菌</figcaption></figure></div><div id="156a2bf9-1abe-8000-89d5-ea302cc5c9b8" style="width:50%" class="column"><figure id="156a2bf9-1abe-8084-908a-fb7c9011cbb2" class="image"><a href="../../%E8%87%AA%E6%B5%8B%202bc534d34f1e411db727a1a46ee0607f/e0a3a03b-5d7d-4d1e-a9b3-1f270778589a.png"><img style="width:320px" src="../../%E8%87%AA%E6%B5%8B%202bc534d34f1e411db727a1a46ee0607f/e0a3a03b-5d7d-4d1e-a9b3-1f270778589a.png"/></a><figcaption>淋病奈瑟菌</figcaption></figure></div></div><div id="156a2bf9-1abe-80f6-8e69-c9a95a009e11" class="column-list"><div id="156a2bf9-1abe-8059-a187-dfa34db95004" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="156a2bf9-1abe-8084-a275-e976b6d0c219"><div style="font-size:1.5em"><span class="icon">☝</span></div><div style="width:100%"><p id="8b203e2e-575c-4b3d-8f68-c6548bce5a83" class=""><strong>脑膜炎奈瑟菌</strong></p><p id="156a2bf9-1abe-8008-bb85-e492692ea937" class="">肾形或豆形革兰氏阴性双球菌,两菌的接触面较平坦或略向内陷,直径0.6~ 0.8um。排列较不规则,单个、成双或4个相连等。<br/>新分离菌株大多有荚膜和菌毛。在病人脑脊液中, 多位于中性粒细胞内,形态典型<br/></p></div></figure></div><div id="156a2bf9-1abe-804b-b41f-f1c341a2aeef" style="width:49.99999999999999%" class="column"><h2 id="156a2bf9-1abe-80e8-8d94-f7642b78d4d1" class="">淋病奈瑟菌</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="156a2bf9-1abe-805c-9c94-caa49ea7ada3"><div style="font-size:1.5em"><span class="icon">☝</span></div><div style="width:100%"><p id="156a2bf9-1abe-80e9-a8b4-cb01fa2f2445" class="">革兰氏阴性,球菌,直径0.6~0.8um,常成双排列,两菌接触面平坦,似一对咖啡豆。有菌毛,无鞭毛和荚膜。急性期病人的脓汁标本中,淋病奈瑟菌常位于中性粒细胞内(图9-7);慢性淋病病人则多存在于细胞外。</p><p id="2f82fec2-978e-448a-b3d3-c7e3e4392be1" class="">
+</p></div></figure></div></div><p id="156a2bf9-1abe-8021-937f-d3c6b0741cc0" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
